@@ -24,24 +24,24 @@ def main():
 
         user_option = UserInput.get_user_option_entered(0)
 
-        if user_option is 1: # Validate postcode
+        if user_option == 1: # Validate postcode
             postcode = UserInput.get_user_postcode_entered()
             is_valid = Validator.validate(postcode)
             if is_valid: print("Postcode '" + postcode + "' is valid!\n")
             else: print("Postcode '" + postcode + "' is invalid! Doesn't match correct format.\n")
 
-        elif user_option is 2: # Format postcode
+        elif user_option == 2: # Format postcode
             postcode = UserInput.get_user_postcode_entered()
             formatted_postcode = Formatter.format(postcode)
             is_valid = Validator.validate(formatted_postcode)
             if is_valid: print("Your formatted postcode is: '" + formatted_postcode + "'\n")
             else: print("Postcode '" + postcode + "' is invalid! Doesn't match correct format.\n")
         
-        elif user_option is 3:  # Retrieve postcode details
+        elif user_option == 3:  # Retrieve postcode details
             postcode = UserInput.get_user_postcode_entered()
             print(Validator.retrieve_details(postcode))
 
-        elif user_option is 4: # Exit
+        elif user_option == 4: # Exit
             print("Exiting the program...\n")
             sys.exit()
 
